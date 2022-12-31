@@ -36,9 +36,27 @@ function showQuestion(){
     questionEl.textContent = questions[currentIndex].title
     for (let index = 0; index < questions[currentIndex].choices.length; index++) {
         let choiceBtn = document.createElement("button")
-        choiceBtn.textContent = questions[currentIndex].choices[index]; //;??
-        console.log(showQuestion);
-        choiceBtn.onclick = choices;
-    } //;??
+        //choiceBtn.textContent = questions[currentIndex].choices[index];
+
+    //console.log(questions[currentIndex].choices[index]);
+
+    // answersEl.innerHTML += choiceBtn;
+        answersEl.appendChild(choiceBtn);
+        choiceBtn.innerHTML = questions[currentIndex].choices[index];
+        choiceBtn.addEventListener("click", function(e){
+            console.log(e.target.innerText);
+            if (e.target.innerText==questions[currentIndex].answer) {
+                console.log('meow');
+
+            }
+        });
+}
 } 
 
+// function buttonSelect() {
+//     for(var i = 0; i < optionText.length; i++){
+//       var option = document.createElement("button");
+//       document.body.appendChild(option);
+//       option.innerHTML = optionText[i];
+//     }
+//   }
