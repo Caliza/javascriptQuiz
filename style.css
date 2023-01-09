@@ -1,15 +1,13 @@
-* {
 
-}
 
 body {
     background-image: linear-gradient(to right,rgb(45 97 174), rgb(243, 244, 248));
 }
 
 header {
-    background-color: rgb(0, 37, 149);
+    background: radial-gradient(circle, rgb(41 62 220) 0%, rgb(2 5 91 / 95%) 100%);
     color: whitesmoke;
-    height: 200px;
+    height: 320px;
     text-align: center;
 }
 
@@ -30,19 +28,18 @@ main {
 
 .button {
     background: radial-gradient(circle, rgba(240,230,140,1) 0%, rgba(187,96,33,0.9542191876750701) 100%);
-    border-radius: 8px;
+    border-radius: 10px;
     color: #13293d;
     cursor: pointer;
     font-size: 2em;
-    letter-spacing: 0.21px;
-    line-height: 16px;
-    max-width: 255px;
+    letter-spacing: 0.25px;
+    height: 90px;
     padding: 20px 52px;
     text-align: center;
     transition-duration: 0.15s;
     transition-property: background-color;
     transition-timing-function: linear;
-    margin-top: 0.6em;
+    margin-top: 1.6em;
 }
 
 
@@ -59,9 +56,9 @@ main {
     width: 820px;
     height: 125px;
     background-color: rgb(71, 155, 250);
-    border: 5px solid;
+    border: 8px solid;
     border-radius: 5px;
-    box-shadow: 0 0 10px 3px;
+    box-shadow: 0 0 13px 3px #8d00ff;
     padding: 12px;
     background-image: linear-gradient(to left,rgb(10 76 173), rgb(216 233 248));
 }
@@ -80,14 +77,40 @@ main {
     display: none;
 }
 
+.high-score {
+    border: 5px solid;
+    border-radius: 8px;
+    background-image: linear-gradient(to left,rgb(10 76 173), rgb(216 233 248));
+    box-shadow: 0 0 13px 3px #8d00ff;
+    font-weight: bold;
+    margin: auto;
+    margin-top: -600px;
+    width: 300px;
+    display: flex;
+    align-content: center;
+    flex-direction: column;
+    align-items: center
+    
+}  
+
+#high-scores{
+    padding: 10px;
+}
+
+#log-button{
+    background: radial-gradient(circle, rgba(240,230,140,1) 0%, rgba(187,96,33,0.9542191876750701) 100%);
+    border-radius: 5px;
+}
+
 #timer {
     width: 820px;
     height: 125px;
     background-color: rgb(71, 155, 250);
     border: 5px solid;
-    border-radius: 5px;
-    box-shadow: 0 0 10px 3px;
+    border-radius: 8px;
+    box-shadow: 0 0 13px 3px #8d00ff;
     font-size: 1.5em;
+    font-weight: bold;
     padding: 12px;
     margin: 30px;
     text-align: center;
@@ -107,6 +130,34 @@ main {
 
 .score{
     margin-top: 20px;
+}
+
+.btn-style {
+    background: radial-gradient(circle, rgba(240,230,140,1) 0%, rgba(187,96,33,0.9542191876750701) 100%);
+    border-radius: 5px;
+}
+
+#end-quiz {
+    border: 5px solid;
+    height: 145px;
+    border-radius: 8px;
+    box-shadow: 0 0 13px 3px #8d00ff;
+    background-image: linear-gradient(to left,rgb(10 76 173), rgb(216 233 248));
+    padding: 0 10px 0 10px;
+}
+
+#ul {
+   align-items: center;
+}
+
+#h2 {
+    font-weight: bold;
+    font-style: sans-serif;
+}
+
+#p {
+    font-weight: bold;
+    font-style: sans-serif;
 }
 
 @media screen and (max-width: 504px) {

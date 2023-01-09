@@ -17,24 +17,27 @@
     <main>
         <section class="container hide">
             <div class="question" >Question</div>
-            <div id="answers" class="buttons">
-                
-            </div>
+            <div id="answers" class="buttons"></div>
         </section>
 
         <section id="timer" class="hide">
-            <div id="count" class="container2">Time 10</div>
-            <div class="score">Score:</div>
+            <div class="score">Time:</div>
+            <div id="count" class="container2">Time 10</div>           
         </section>
         <section id="end-quiz" class="hide">
-            <p>To save your score enter initials</p>
-            <h2>Your Score is <span id="score"></span></h2>
-            <input id="intials">
-            <button id="log-button">Save score</button>
+            <h2 id="h2">Your Score is: <span id="score"></span></h2>
+            <p id="p">To save your score enter initials</p>
+            <input id="initials">
+            <button id="log-button">Save score</button>           
         </section>
-
-
+     
     </main>
+
+    <footer class="high-score hide">
+        <div id="high-scores">High Scores</div>
+        <ul id="ul"></ul>
+    </footer>
+
     <script src="script.js"></script>
 </body>
 </html>
