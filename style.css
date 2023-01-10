@@ -12,12 +12,9 @@ header {
 }
 
 main {
-    display: flex;
-    justify-content: center;
-    align-items: center;    
-    width: 100vw;
-    height: 100vw; 
-    margin-top: -370px;
+       
+    
+    margin-top: 60px;
 
 }
 
@@ -56,11 +53,13 @@ main {
     width: 820px;
     height: 125px;
     background-color: rgb(71, 155, 250);
-    border: 8px solid;
-    border-radius: 5px;
+    border: 5px solid;
+    border-radius: 8px;
     box-shadow: 0 0 13px 3px #8d00ff;
     padding: 12px;
     background-image: linear-gradient(to left,rgb(10 76 173), rgb(216 233 248));
+    margin-top: 150px;
+    margin-right: 7px;
 }
 
 .container2 {
@@ -84,17 +83,13 @@ main {
     box-shadow: 0 0 13px 3px #8d00ff;
     font-weight: bold;
     margin: auto;
-    margin-top: -600px;
-    width: 300px;
-    display: flex;
-    align-content: center;
-    flex-direction: column;
-    align-items: center
+    width: 300px;  
     
 }  
 
 #high-scores{
     padding: 10px;
+    text-align: center;
 }
 
 #log-button{
@@ -112,7 +107,7 @@ main {
     font-size: 1.5em;
     font-weight: bold;
     padding: 12px;
-    margin: 30px;
+    margin-top: 150px;
     text-align: center;
     background-image: linear-gradient(to left,rgb(10 76 173), rgb(216 233 248));
 }
@@ -137,17 +132,28 @@ main {
     border-radius: 5px;
 }
 
+#active{
+    display: flex;
+}
+
 #end-quiz {
     border: 5px solid;
     height: 145px;
+    width: 19%;
     border-radius: 8px;
     box-shadow: 0 0 13px 3px #8d00ff;
     background-image: linear-gradient(to left,rgb(10 76 173), rgb(216 233 248));
     padding: 0 10px 0 10px;
+    margin: 0 auto;
+    margin-bottom: 10px;
+    margin-top: 150px;
 }
 
 #ul {
    align-items: center;
+   list-style: none;
+    text-align: center;
+    margin-right: 41px;
 }
 
 #h2 {
@@ -166,8 +172,3 @@ main {
     }
 }
 
-@media screen and (max-width: 1183px) {
-    main {
-      flex-direction: column;
-    }
-}

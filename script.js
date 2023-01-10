@@ -1,3 +1,5 @@
+// list of declared variables, var questions is array of questions to be used in quiz.
+
 var questions = [
     {
         title: "Commonly used data types do not include?",
@@ -30,7 +32,6 @@ var questions = [
 var timer;
 var timerCount;
 var currentIndex = 0
-//El = htlm element
 var timerEl = document.querySelector("#timer");
 var startEl = document.querySelector("#start");
 var counterEl = document.querySelector(".timer-box")
@@ -40,12 +41,11 @@ var questionEl = document.querySelector(".question");
 var answersEl = document.querySelector("#answers");
 var ulEl = document.querySelector("#ul");
 var interval;
-var scoreEl = document.querySelector("#high-score");
+var scoreEl = document.querySelector(".high-score");
 var counter = 60;
 var id = document.getElementById("count");
 
-// scoreEl.classList.add("hide")
-
+//startBtn.add EvenListener starts the 60 secondtimer and hides the start button when start button is clicked.
 startBtn.addEventListener("click", function () {
     startEl.classList.add("hide")
     containerEl.classList.remove("hide")
@@ -64,6 +64,7 @@ startBtn.addEventListener("click", function () {
     showQuestion()
 });
 
+//Iterrates through a for loop to ask student 5 questions.
 function showQuestion() {
     questionEl.textContent = questions[currentIndex].title
     answersEl.innerHTML = "";
@@ -78,7 +79,7 @@ function showQuestion() {
 
     }
 }
-
+//Deducts 12 seconds from timer if student answers question wrong. Once time is over, it ends game.
 function selectedAnswer(e) {
     var selectedBtn = e.target
     if (this.value !== questions[currentIndex].answer) {
@@ -100,14 +101,14 @@ function selectedAnswer(e) {
    
 }
 
+// function endQuiz is exicutded once user presses start button
 function endQuiz(){
     clearInterval(interval)
-    
+    timerEl.classList.add("hide")
     containerEl.classList.add("hide")
+    scoreEl.classList.remove("hide")
     document.getElementById("end-quiz").classList.remove("hide")
     document.getElementById("score").textContent = counter;
-    // line 95??
-    //document.getElementById("initials").textContent = initials;
     var highScores = JSON.parse(localStorage.getItem("initials")) || []
     console.log(highScores);
     for (let index = 0; index < highScores.length; index++) {
@@ -126,5 +127,4 @@ document.getElementById("log-button").addEventListener("click", function(){
     }  
     highScores.push(initials) 
     localStorage.setItem("initials", JSON.stringify(highScores))
-    //save to local storage    "loacalStorage.setItem" make object out of score pull initial out of input box. Array of scores
     });
