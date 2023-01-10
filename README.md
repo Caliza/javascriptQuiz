@@ -8,6 +8,6 @@
 -How to incorporate a timer and have dynamic pages without opening up a new browser
 
 ## USAGE
-
+https://caliza.github.io/javascriptQuiz/
 
 ![JavaScripQuiz!](javascripQuiz.jpg)
