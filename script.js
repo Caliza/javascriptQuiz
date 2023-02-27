@@ -118,6 +118,7 @@ function endQuiz(){
         ulEl.appendChild(name);
     }
 }
+
 document.getElementById("log-button").addEventListener("click", function(){
     var highScores = JSON.parse(localStorage.getItem("initials")) || []
     let initials = {
@@ -126,5 +127,16 @@ document.getElementById("log-button").addEventListener("click", function(){
 
     }  
     highScores.push(initials) 
+    // Clear HTML
+    ulEl.innerHTML = ''
+    for (let index = 0; index < highScores.length; index++) {
+        const element = highScores[index];
+        var name =document.createElement("li");
+        name.textContent += element.initials+ " " + element.score;
+        ulEl.appendChild(name);
+    }
     localStorage.setItem("initials", JSON.stringify(highScores))
+    document.getElementById('hide-content').classList.add('hide');
     });
+
+    // style.display = 'none';

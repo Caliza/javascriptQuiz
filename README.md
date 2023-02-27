@@ -10,4 +10,4 @@
 ## USAGE
 https://caliza.github.io/javascriptQuiz/
 
-![JavaScripQuiz!](javascripQuiz.jpg)
+![PasswordGenerator!](passwordGenerator.jpg)
