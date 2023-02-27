@@ -26,7 +26,7 @@ var questions = [
         choices: ["In HTML", "In CSS", "Outside", "Insude"],
         answer: "Outside"
     }
-    
+
 ];
 
 var timer;
@@ -95,14 +95,14 @@ function selectedAnswer(e) {
     currentIndex++
     if (currentIndex >= questions.length) {
         endQuiz();
-    }else{
-         showQuestion()
+    } else {
+        showQuestion()
     }
-   
+
 }
 
 // function endQuiz is exicutded once user presses start button
-function endQuiz(){
+function endQuiz() {
     clearInterval(interval)
     timerEl.classList.add("hide")
     containerEl.classList.add("hide")
@@ -113,30 +113,40 @@ function endQuiz(){
     console.log(highScores);
     for (let index = 0; index < highScores.length; index++) {
         const element = highScores[index];
-        var name =document.createElement("li");
-        name.textContent += element.initials+ " " + element.score;
+        var name = document.createElement("li");
+        name.textContent += element.initials + " " + element.score;
         ulEl.appendChild(name);
     }
 }
 
-document.getElementById("log-button").addEventListener("click", function(){
+document.getElementById("log-button").addEventListener("click", function () {
     var highScores = JSON.parse(localStorage.getItem("initials")) || []
     let initials = {
         initials: document.getElementById("initials").value,
         score: counter
 
-    }  
-    highScores.push(initials) 
+    }
+    function limit(initials) {
+        var max_chars = 2;
+
+        if (initials.value.length > max_chars) {
+            initials.value = initials.value.substr(0, max_chars);
+            
+        }
+    }
+    
+    highScores.push(initials)
+    console.log('beta', initials);
     // Clear HTML
     ulEl.innerHTML = ''
     for (let index = 0; index < highScores.length; index++) {
         const element = highScores[index];
-        var name =document.createElement("li");
-        name.textContent += element.initials+ " " + element.score;
+        var name = document.createElement("li");
+        name.textContent += element.initials + " " + element.score;
         ulEl.appendChild(name);
     }
     localStorage.setItem("initials", JSON.stringify(highScores))
     document.getElementById('hide-content').classList.add('hide');
-    });
+});
 
-    // style.display = 'none';
+    // style.display = 'none'; = .classList.add('hide')
