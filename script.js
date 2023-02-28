@@ -113,6 +113,11 @@ function endQuiz() {
     console.log(highScores);
     for (let index = 0; index < highScores.length; index++) {
         const element = highScores[index];
+        //Trying to sort array highscores.
+        highScores.sort(function (x, y) {
+            return y.score-x.score;
+        });
+
         var name = document.createElement("li");
         name.textContent += element.initials + " " + element.score;
         ulEl.appendChild(name);
@@ -124,16 +129,13 @@ document.getElementById("log-button").addEventListener("click", function () {
     let initials = {
         initials: document.getElementById("initials").value,
         score: counter
-
     }
-    function limit(initials) {
-        var max_chars = 2;
+    console.log('beta0', highScores);
 
-        if (initials.value.length > max_chars) {
-            initials.value = initials.value.substr(0, max_chars);
-            
-        }
-    }
+    // for (let score = 0; score < array.length; score++) {
+    //     const element = array[score];
+    //     element.ma 
+    // }
     
     highScores.push(initials)
     console.log('beta', initials);
