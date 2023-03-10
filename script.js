@@ -152,3 +152,25 @@ document.getElementById("log-button").addEventListener("click", function () {
 });
 
     // style.display = 'none'; = .classList.add('hide')
+
+    function endQuiz() {
+    clearInterval(interval)
+    timerEl.classList.add("hide")
+    containerEl.classList.add("hide")
+    scoreEl.classList.remove("hide")
+    document.getElementById("end-quiz").classList.remove("hide")
+    document.getElementById("score").textContent = counter;
+    var highScores = JSON.parse(localStorage.getItem("initials")) || []
+    console.log(highScores);
+    for (let index = 0; index < highScores.length; index++) {
+        const element = highScores[index];
+        //Trying to sort array highscores.
+        highScores.sort(function (x, y) {
+            return y.score-x.score;
+        });
+
+        var name = document.createElement("li");
+        name.textContent += element.initials + " " + element.score;
+        ulEl.appendChild(name);
+    }
+}
